@@ -3,17 +3,17 @@
  */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ThemeProvider } from '@emotion/react';
+// import { ThemeProvider } from '@emotion/react';
 
-import { App } from './epics';
+// import { App } from './epics';
 
 // #if process.env.IXR
 // @ts-ignore
-import { sst as theme } from '../../ui__themes/src/ixr/apps';
+// import { sst as theme } from '../../ui__themes/src/ixr/apps';
 // #endif
 // #if process.env.PEREK
 // @ts-ignore
-import { sst as theme } from '../../ui__themes/src/perekrestok/apps';
+// import { sst as theme } from '../../ui__themes/src/perekrestok/apps';
 /// #endif
 
 /**
@@ -23,9 +23,13 @@ import { sst as theme } from '../../ui__themes/src/perekrestok/apps';
 
 window.addEventListener('load', () => {
     ReactDOM.render(
-        <ThemeProvider theme={theme}>
-        <App />
-        </ThemeProvider>,
+        <div>
+          Hi!
+          <button onClick={() => {}}>Switch</button>
+        </div>,
+        // <ThemeProvider theme={theme}>
+        // <App />
+        // </ThemeProvider>,
         document.getElementById('root'),
     );
 });

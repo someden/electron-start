@@ -3,14 +3,14 @@
         "enable": true
     },
     "ds": {
-        "enable": true,
+        "enable": false,
         "mode": "advertising"
     },
     "sst": {
-        "enable": false
+        "enable": true
     },
     "sco": {
-        "enable": true
+        "enable": false
     },
     "poll": {
         "enable": false

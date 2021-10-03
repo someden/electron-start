@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-const ConditionalLoader = require.resolve('webpack-conditional-loader');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+// const ConditionalLoader = require.resolve('webpack-conditional-loader');
+// const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const configuration: webpack.Configuration = {
     entry: './src/index.tsx',
@@ -18,26 +18,26 @@ const configuration: webpack.Configuration = {
     },
     module: {
         rules: [
-            {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                use: [
-                    {
-                        loader: ImageMinimizerPlugin.loader,
-                        options: {
-                            filter: (source: any) => {
-                                // The `source` argument is a `Buffer` of source file
-                                // The `sourcePath` argument is an absolute path to source
-                                if (source.byteLength < 8192) {
-                                    return false;
-                                }
+            // {
+            //     test: /\.(jpe?g|png|gif|svg)$/i,
+            //     use: [
+            //         {
+            //             loader: ImageMinimizerPlugin.loader,
+            //             options: {
+            //                 filter: (source: any) => {
+            //                     // The `source` argument is a `Buffer` of source file
+            //                     // The `sourcePath` argument is an absolute path to source
+            //                     if (source.byteLength < 8192) {
+            //                         return false;
+            //                     }
 
-                                return true;
-                            },
-                        },
-                    },
-                ],
-                enforce: 'pre',
-            },
+            //                     return true;
+            //                 },
+            //             },
+            //         },
+            //     ],
+            //     enforce: 'pre',
+            // },
             {
                 test: /\.(jpeg|jpg|png|svg?)(\?[a-z0-9=&.]+)?$/,
                 type: 'asset/inline',
@@ -56,15 +56,15 @@ const configuration: webpack.Configuration = {
                             transpileOnly: true,
                         },
                     },
-                    {
-                        loader: 'ifdef-loader',
-                        options: {
-                            env: 'PRODUCTION',
-                        },
-                    },
-                    {
-                        loader: ConditionalLoader,
-                    },
+                    // {
+                    //     loader: 'ifdef-loader',
+                    //     options: {
+                    //         env: 'PRODUCTION',
+                    //     },
+                    // },
+                    // {
+                    //     loader: ConditionalLoader,
+                    // },
                 ],
             },
         ],

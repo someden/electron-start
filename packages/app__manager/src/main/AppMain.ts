@@ -4,8 +4,8 @@ import PATH from 'path';
 import { app } from 'electron';
 import { initializeIpcEvents, releaseIpcEvents } from './IPCEvents';
 import { createNewWindow } from './WindowManager';
-import { createSettingsManager, createMonitoringService, createStatsService, createAuthService, createPictureStorage } from './services';
-import * as services from './services';
+// import { createSettingsManager, createMonitoringService, createStatsService, createAuthService, createPictureStorage } from './services';
+// import * as services from './services';
 
 
 /**
@@ -13,8 +13,9 @@ import * as services from './services';
  */
 export const currentWindows: any = {
   msm: null,
-  ds: null,
-  sco: null,
+  sst: null,
+  // ds: null,
+  // sco: null,
 };
 
 const path2AllLogs = PATH.join(__dirname, './logs');
@@ -26,11 +27,11 @@ app.name = 'MSMClient';
  * Background Services
  */
 
-createSettingsManager();
-createMonitoringService();
-createStatsService();
-createAuthService();
-createPictureStorage();
+// createSettingsManager();
+// createMonitoringService();
+// createStatsService();
+// createAuthService();
+// createPictureStorage();
 
 app.on('ready', () => {
   /// #if env == 'DEBUG'
